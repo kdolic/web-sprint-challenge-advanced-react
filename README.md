@@ -30,13 +30,59 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+   - Need to import {Component}
+   - class components extend that import of Component
+   - constructor method with a super being invoked right under it.
+   - State can also be passed inside of the constructor
+     ex: this.state = {something: []}
+   - a render method is required to return JSX
+
 2. Describe the different phases of the component lifecycle.
+
+- Mounting Phase - Birth
+  Constructor function called and state data initialized
+  Receive props and place them on our component as state
+  Render is then invoked
+- Updating Phase - Growth
+  Any new props received from a parent, will trigger updates to child
+  this.setState - any changes need to go through setState
+  setState calls a render by default
+  componentDidUpdate()
+- Un-Mounting Phase - Death
+  componentWillUnmount()
+  used for any clean up in code
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+- V = fn(s)
+  View is a function of state
+  V = what the users see and interact with on our pages
+  Fn = Function/Class - Component or class that contains/encapsulates data/view
+  S = Data that our view will be represented by
+- Constructor
+  Used to load in initial state data
+  Will set component up with data that it needs ‘before’ it gets mounted to the DOM
+  Good for receiving props and translating props into state
+- Render
+  Required for all Class Components
+  When triggered, your UI gets rendered to the DOM
+  Involved in Mounting and Updating Phase
+  State and Render come hand in hand, v=fn(state)
+- componentDidMount(), componentDidUpdate(), componentDidUnmount()
+
 4. Define stateful logic.
 
+- Logic that is built into a component. Could be a function that handles a click event or function that handles submit on a form, a function that formats data before displayed. It deals with state in a component.
+
 5. Describe how to test a React component with React Testing Library.
+
+- Must have a React project open
+- Open App.test.js (OR whatever.test.js for the component you are going to write tests on)
+- Have to import {render,screen} from @testing-library/react
+- Render an element/component
+  ex: test('element', ()=> {render(<App/>)}
+- Inspect the output in the term with npm test
+- Follow Arrange, Act, Assert from the beginning
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
