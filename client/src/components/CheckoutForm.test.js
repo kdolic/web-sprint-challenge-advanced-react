@@ -43,6 +43,5 @@ test("form shows success message on submit with form details", async () => {
     const newCustomerCheckout = await screen.findByText(/You have ordered some plants!/i);
     expect(newCustomerCheckout).toBeInTheDocument();
 
-
-
+// MVP
 });
