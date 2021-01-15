@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import useLocalStorage from './useLocalStorage';
 
 const useForm = (initialValues) => {
-    const [values, setValues] = useState('Form', initialValues);
+    const [values, setValues] = useLocalStorage('Form', initialValues);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
     const handleChanges = (e) => {
