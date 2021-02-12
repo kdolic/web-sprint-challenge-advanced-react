@@ -30,13 +30,55 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+- 1.) Declare your class, extend React.Component base class.
+- 2.) Set up constructor and state (also can just create state object/array without constructor/super if no props are being passed in)
+- 3.) Render function created above return that renders UI and returns JSX
+- 4.) Can incorporate DOM events, set/update state any time a change or event triggers from the user's interaction
+
 2. Describe the different phases of the component lifecycle.
+
+- 1.) Birth/Mounting Phase
+  - Whatever initial data you want to access will be defined in the constructor
+  - Constructor called and state data
+  - Receive props and place them on component as state (if needed)
+  - Render is invoked
+  - componentDidMount() invoked
+- 2.) Growth/Update Phase
+  - Any new props received from parent will trigger updates to child
+  - this.setState - any changes need setState
+  - Changes the component data, forcing a new call to the render() function
+  - componentDidUpdate()
+- 3.) Death/ Unmounting Phase
+  - removing the component of the screen
+  - 'clean up'
+  - componentWillUnmount()
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+- 1.) Constructor
+  - Purpose: create components with inciting state data for the initial render
+  - Can pass props directly into constructor and also need to pass super if receiving props
+  - 'Before' it gets mounted to the DOM
+- 2.) Render
+  - Purpose: Used to tell React to return a piece of the DOM/JSX
+  - Required when using class components
+  - Called during the mounting phase and also updating phase with a rerender of the DOM
+  - State and render go hand-in-hand
+- 3.) componentDidMount() - invoked once, invoked after render function, set up eventListeners, fetch initial data
+- 4.) componentDidUpdate() - fetch new data based on changes to props/state
+- 5.) componentWillUnmount() - cleanup of dangerous things that happened in cDM, removed all listeners, warn users
+
 4. Define stateful logic.
 
+- Stateful logic is logic that is built into a component. It can be a function that handles a event or function that sets toggle state.
+- Deals with state for that component
+
 5. Describe how to test a React component with React Testing Library.
+
+- Import - import react dependencies, react-testing-methods, the component you will be testing
+- Arrange - call the render method and component inside of it, setting up the component
+- Act - query the elements you want to test
+- Assert - Need assert to assure that the queried element is what it is expected to be, final portion of a test
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
